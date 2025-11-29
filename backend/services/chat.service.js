@@ -1,60 +1,16 @@
+import database from '../database/database.js';
 import logger from '../utils/logger.js';
-
-// Simple in-memory storage for chat history (in production, use a database)
-const chatHistory = new Map();
-
-// FAQ database
-const faqDatabase = [
-  {
-    id: 1,
-    question: "Qui est Jésus-Christ ?",
-    answer: "Jésus-Christ est le Fils de Dieu, venu sur terre pour sauver l'humanité du péché. Il est à la fois pleinement Dieu et pleinement homme, comme l'enseigne Jean 1:14."
-  },
-  {
-    id: 2,
-    question: "Comment être sauvé ?",
-    answer: "Le salut vient par la foi en Jésus-Christ. Romains 10:9 dit : 'Si tu confesses de ta bouche le Seigneur Jésus, et si tu crois dans ton cœur que Dieu l'a ressuscité des morts, tu seras sauvé.'"
-  },
-  {
-    id: 3,
-    question: "Qu'est-ce que la prière ?",
-    answer: "La prière est une communication avec Dieu. C'est un moyen de lui parler, de le louer, de lui demander pardon et de présenter nos requêtes, comme l'enseigne Philippiens 4:6."
-  },
-  {
-    id: 4,
-    question: "Comment lire la Bible ?",
-    answer: "Commencez par prier pour demander la compréhension, lisez régulièrement, méditez sur les passages et appliquez les enseignements à votre vie. L'Évangile de Jean est un bon point de départ."
-  }
-];
 
 export const processMessage = async (message, userId = 'anonymous') => {
   try {
-    // Store user message in history
-    if (!chatHistory.has(userId)) {
-      chatHistory.set(userId, []);
-    }
-    
-    const userHistory = chatHistory.get(userId);
-    userHistory.push({
-      type: 'user',
-      message,
-      timestamp: new Date().toISOString()
-    });
-
-    // Simple keyword-based response system
+    // Generate response
     const response = generateResponse(message);
     
-    // Store bot response in history
-    userHistory.push({
-      type: 'bot',
-      message: response.text,
-      timestamp: new Date().toISOString()
-    });
-
-    // Keep only last 50 messages per user
-    if (userHistory.length > 50) {
-      userHistory.splice(0, userHistory.length - 50);
-    }
+    // Store in database
+    await database.run(
+      'INSERT INTO chat_messages (user_id, message, response, type) VALUES (?, ?, ?, ?)',
+      [userId, message, response.text, response.type]
+    );
 
     logger.info(`Chat message processed for user ${userId}`);
     return response;
@@ -64,21 +20,63 @@ export const processMessage = async (message, userId = 'anonymous') => {
   }
 };
 
+export const getChatHistory = async (userId, limit = 50) => {
+  try {
+    const messages = await database.query(
+      `SELECT message, response, type, created_at 
+       FROM chat_messages 
+       WHERE user_id = ? 
+       ORDER BY created_at DESC 
+       LIMIT ?`,
+      [userId, limit]
+    );
+
+    return messages.reverse().map(msg => [
+      {
+        type: 'user',
+        message: msg.message,
+        timestamp: msg.created_at
+      },
+      {
+        type: 'bot',
+        message: msg.response,
+        timestamp: msg.created_at
+      }
+    ]).flat();
+  } catch (error) {
+    logger.error('Error fetching chat history:', error);
+    throw error;
+  }
+};
+
+export const getFAQ = async () => {
+  return [
+    {
+      id: 1,
+      question: "Qui est Jésus-Christ ?",
+      answer: "Jésus-Christ est le Fils de Dieu, venu sur terre pour sauver l'humanité du péché. Il est à la fois pleinement Dieu et pleinement homme, comme l'enseigne Jean 1:14."
+    },
+    {
+      id: 2,
+      question: "Comment être sauvé ?",
+      answer: "Le salut vient par la foi en Jésus-Christ. Romains 10:9 dit : 'Si tu confesses de ta bouche le Seigneur Jésus, et si tu crois dans ton cœur que Dieu l'a ressuscité des morts, tu seras sauvé.'"
+    },
+    {
+      id: 3,
+      question: "Qu'est-ce que la prière ?",
+      answer: "La prière est une communication avec Dieu. C'est un moyen de lui parler, de le louer, de lui demander pardon et de présenter nos requêtes, comme l'enseigne Philippiens 4:6."
+    },
+    {
+      id: 4,
+      question: "Comment lire la Bible ?",
+      answer: "Commencez par prier pour demander la compréhension, lisez régulièrement, méditez sur les passages et appliquez les enseignements à votre vie. L'Évangile de Jean est un bon point de départ."
+    }
+  ];
+};
+
 const generateResponse = (message) => {
   const lowerMessage = message.toLowerCase();
   
-  // Check for FAQ matches
-  for (const faq of faqDatabase) {
-    const keywords = extractKeywords(faq.question.toLowerCase());
-    if (keywords.some(keyword => lowerMessage.includes(keyword))) {
-      return {
-        text: faq.answer,
-        type: 'faq'
-      };
-    }
-  }
-
-  // Keyword-based responses
   if (lowerMessage.includes('jésus') || lowerMessage.includes('christ')) {
     return {
       text: "Jésus-Christ est le centre de la foi chrétienne. Il est le Fils de Dieu qui est venu sur terre pour nous sauver. Avez-vous une question spécifique sur Jésus ?",
@@ -114,21 +112,8 @@ const generateResponse = (message) => {
     };
   }
 
-  // Default response
   return {
     text: "Merci pour votre question. Je suis là pour vous aider à comprendre la Bible et la foi chrétienne. N'hésitez pas à me poser des questions plus spécifiques sur Jésus, la prière, le salut, ou tout autre sujet biblique.",
     type: 'default'
   };
-};
-
-const extractKeywords = (text) => {
-  return text.split(' ').filter(word => word.length > 3);
-};
-
-export const getChatHistory = async (userId) => {
-  return chatHistory.get(userId) || [];
-};
-
-export const getFAQ = async () => {
-  return faqDatabase;
 };

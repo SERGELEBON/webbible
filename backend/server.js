@@ -7,7 +7,9 @@ import winston from 'winston';
 
 import bibleRoutes from './routes/bible.routes.js';
 import chatRoutes from './routes/chat.routes.js';
+import authRoutes from './routes/auth.routes.js';
 import errorHandler from './middleware/errorHandler.js';
+import { specs, swaggerUi } from './docs/swagger.js';
 
 dotenv.config();
 
@@ -66,6 +68,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Swagger documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+  explorer: true,
+  customCss: '.swagger-ui .topbar { display: none }'
+}));
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({
@@ -76,6 +84,7 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
+app.use('/api/auth', authRoutes);
 app.use('/api/bible', bibleRoutes);
 app.use('/api/chat', chatRoutes);
 
@@ -90,10 +99,22 @@ app.use('*', (req, res) => {
 // Error handling middleware
 app.use(errorHandler);
 
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM received, shutting down gracefully');
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  logger.info('SIGINT received, shutting down gracefully');
+  process.exit(0);
+});
+
 // Start server
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
-  console.log(`🚀 JeLisLaBIBLE Backend running on http://localhost:${PORT}`);
+  console.log(`JeLisLaBIBLE Backend running on http://localhost:${PORT}`);
+  console.log(` API Documentation available at http://localhost:${PORT}/api-docs`);
 });
 
 export default app;

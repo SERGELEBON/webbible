@@ -64,6 +64,13 @@ export default function Home() {
       link: '/plans',
       color: 'bg-red-50 text-red-600',
     },
+      {
+          icon: BookOpen,
+          title: t('features.ask.title'),
+          description: t('features.ask.desc'),
+          link: '/reader',
+          color: 'bg-red-50 text-red-600',
+      },
   ];
 
   return (

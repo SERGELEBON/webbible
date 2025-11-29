@@ -1,10 +1,42 @@
-import fetch from 'node-fetch';
-    import NodeCache from 'node-cache';
-    import logger from '../utils/logger.js';
+import axios from 'axios';
+import axiosRetry from 'axios-retry';
+import CircuitBreaker from 'opossum';
+import NodeCache from 'node-cache';
+import database from '../database/database.js';
+import logger from '../utils/logger.js';
 
 const cache = new NodeCache({ stdTTL: parseInt(process.env.CACHE_TTL) || 3600 });
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY;
 const BIBLE_API_URL = process.env.BIBLE_API_URL || 'https://rest.api.bible';
+
+// Configure axios with retries
+const apiClient = axios.create({
+  baseURL: BIBLE_API_URL,
+  timeout: 10000,
+  headers: {
+    'Authorization': `Bearer ${BIBLE_API_KEY}`,
+    'Content-Type': 'application/json'
+  }
+});
+
+// Configure retry logic
+axiosRetry(apiClient, {
+  retries: 3,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: (error) => {
+    return axiosRetry.isNetworkOrIdempotentRequestError(error) ||
+           error.response?.status >= 500;
+  }
+});
+
+// Circuit breaker configuration
+const circuitBreakerOptions = {
+  timeout: 15000,
+  errorThresholdPercentage: 50,
+  resetTimeout: 30000,
+  rollingCountTimeout: 10000,
+  rollingCountBuckets: 10
+};
 
 const makeApiRequest = async (endpoint) => {
   const cacheKey = `bible_${endpoint}`;
@@ -15,69 +47,61 @@ const makeApiRequest = async (endpoint) => {
     return cached;
   }
 
-  const url = `${BIBLE_API_URL}${endpoint}`;
-  const response = await fetch(url, {
-    headers: {
-      'Authorization': `Bearer ${BIBLE_API_KEY}`,
-      'Content-Type': 'application/json'
-    }
-  });
-
-  if (!response.ok) {
-    throw new Error(`Bible API error: ${response.status} ${response.statusText}`);
+  try {
+    const response = await apiClient.get(endpoint);
+    const data = response.data;
+    cache.set(cacheKey, data);
+    logger.info(`API request successful for ${endpoint}`);
+    return data;
+  } catch (error) {
+    logger.error(`Bible API error for ${endpoint}:`, error.message);
+    throw new Error(`Bible API error: ${error.response?.status || 'Network'} ${error.message}`);
   }
-
-  const data = await response.json();
-  cache.set(cacheKey, data);
-  logger.info(`API request successful for ${endpoint}`);
-  
-  return data;
 };
 
+// Wrap API calls with circuit breaker
+const circuitBreaker = new CircuitBreaker(makeApiRequest, circuitBreakerOptions);
+
+circuitBreaker.on('open', () => logger.warn('Bible API circuit breaker opened'));
+circuitBreaker.on('halfOpen', () => logger.info('Bible API circuit breaker half-open'));
+circuitBreaker.on('close', () => logger.info('Bible API circuit breaker closed'));
+
 export const getTranslations = async () => {
-  return await makeApiRequest('/v1/bibles');
+  return await circuitBreaker.fire('/v1/bibles');
 };
 
 export const getBooks = async (bibleId = 'de4e12af7f28f599-02') => {
-  return await makeApiRequest(`/v1/bibles/${bibleId}/books`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/books`);
 };
 
 export const getChapters = async (bookId, bibleId = 'de4e12af7f28f599-02') => {
-  return await makeApiRequest(`/v1/bibles/${bibleId}/books/${bookId}/chapters`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/books/${bookId}/chapters`);
 };
 
 export const getChapter = async (chapterId, bibleId = 'de4e12af7f28f599-02') => {
-  return await makeApiRequest(`/v1/bibles/${bibleId}/chapters/${chapterId}`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}`);
 };
 
 export const getVerses = async (chapterId, bibleId = 'de4e12af7f28f599-02') => {
-  return await makeApiRequest(`/v1/bibles/${bibleId}/chapters/${chapterId}/verses`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}/verses`);
 };
 
 export const getVerse = async (verseId, bibleId = 'de4e12af7f28f599-02') => {
-  return await makeApiRequest(`/v1/bibles/${bibleId}/verses/${verseId}`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/verses/${verseId}`);
 };
 
 export const searchVerses = async (query, bibleId = 'de4e12af7f28f599-02') => {
   const encodedQuery = encodeURIComponent(query);
-  return await makeApiRequest(`/v1/bibles/${bibleId}/search?query=${encodedQuery}`);
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/search?query=${encodedQuery}`);
 };
 
 export const getVerseOfDay = async () => {
-  // Generate a verse of the day based on current date
   const today = new Date();
   const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
   
-  // Popular verses for verse of the day
   const popularVerses = [
-    'JHN.3.16',
-    'ROM.8.28',
-    'PHP.4.13',
-    'PSA.23.1',
-    'JER.29.11',
-    '1CO.13.4',
-    'MAT.28.20',
-    'ISA.41.10'
+    'JHN.3.16', 'ROM.8.28', 'PHP.4.13', 'PSA.23.1', 'JER.29.11',
+    '1CO.13.4', 'MAT.28.20', 'ISA.41.10'
   ];
   
   const verseIndex = dayOfYear % popularVerses.length;
@@ -87,40 +111,50 @@ export const getVerseOfDay = async () => {
 };
 
 export const getAudio = async (book, chapter) => {
-  // Audio functionality would require additional API or service
-  // For now, return a placeholder response
-  return {
-    book,
-    chapter,
-    audioUrl: null,
-    message: 'Audio functionality will be available soon'
-  };
+  try {
+    const audioFile = await database.query(
+      'SELECT file_url, duration FROM audio_files WHERE book_id = ? AND chapter = ?',
+      [book, chapter]
+    );
+
+    if (audioFile.length > 0) {
+      return {
+        book,
+        chapter,
+        audioUrl: audioFile[0].file_url,
+        duration: audioFile[0].duration
+      };
+    }
+
+    return {
+      book,
+      chapter,
+      audioUrl: null,
+      message: 'Audio functionality will be available soon'
+    };
+  } catch (error) {
+    logger.error('Error fetching audio:', error);
+    throw error;
+  }
 };
 
 export const getStrongEntry = async (code) => {
-  // Strong's concordance would require additional data source
-  // For now, return mock data based on the code
-  const mockStrongs = {
-    'H0430': {
-      code: 'H0430',
-      language: 'hebrew',
-      word: 'אֱלֹהִים',
-      transliteration: 'elohim',
-      definition: 'Dieu, dieux, juges, anges',
-      usage: 'Utilisé 2606 fois dans l\'Ancien Testament. Désigne le Dieu créateur, mais aussi des êtres divins ou des autorités.'
-    },
-    'G0026': {
-      code: 'G0026',
-      language: 'greek',
-      word: 'ἀγάπη',
-      transliteration: 'agapē',
-      definition: 'Amour, charité',
-      usage: 'Amour divin inconditionnel, distinct de l\'amour émotionnel (phileo) ou romantique (eros).'
-    }
-  };
+  try {
+    const entries = await database.query(
+      'SELECT * FROM strongs_entries WHERE code = ?',
+      [code]
+    );
 
-  return mockStrongs[code] || {
-    error: 'Strong entry not found',
-    code
-  };
+    if (entries.length > 0) {
+      return entries[0];
+    }
+
+    return {
+      error: 'Strong entry not found',
+      code
+    };
+  } catch (error) {
+    logger.error('Error fetching Strong entry:', error);
+    throw error;
+  }
 };

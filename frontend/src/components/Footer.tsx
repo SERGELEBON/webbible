@@ -59,7 +59,6 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
           <p>&copy; 2025 {t('site.title')}. {t('footer.copyright')}</p>
           <p className="mt-2">
-            {t('footer.built')} <a rel="nofollow" target="_blank" href="https://meku.dev" className="text-blue-400 hover:text-blue-300">Meku.dev</a>
           </p>
         </div>
       </div>

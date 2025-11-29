@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
 export type Language = 'en' | 'fr' | 'es';
 
@@ -38,6 +38,8 @@ const translations = {
     'features.strongs.desc': 'Explore Hebrew and Greek definitions',
     'features.plans.title': 'Reading Plans',
     'features.plans.desc': 'Follow a plan to read the Bible in one year',
+      'features.ask.title': 'Pastor, I have the question',
+      'features.ask.desc': 'Ask the pastor all things about the Bible',
     'chat.title': 'Have a question about the Bible?',
     'chat.subtitle': 'Our assistant is here to help you understand the Word',
     'chat.cta': 'Click the chat icon at the bottom right to start',
@@ -46,7 +48,6 @@ const translations = {
     'footer.resources': 'Resources',
     'footer.follow': 'Follow us',
     'footer.copyright': 'All rights reserved.',
-    'footer.built': 'Built with ❤️ by'
   },
   fr: {
     'site.title': 'JeLisLaBIBLE',
@@ -83,7 +84,6 @@ const translations = {
     'footer.resources': 'Ressources',
     'footer.follow': 'Suivez-nous',
     'footer.copyright': 'Tous droits réservés.',
-    'footer.built': 'Créé avec ❤️ par'
   },
   es: {
     'site.title': 'JeLisLaBIBLE',
@@ -120,7 +120,6 @@ const translations = {
     'footer.resources': 'Recursos',
     'footer.follow': 'Síguenos',
     'footer.copyright': 'Todos los derechos reservados.',
-    'footer.built': 'Hecho con ❤️ por'
   }
 };
 
@@ -142,10 +141,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = (): LanguageContextType => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
+    const context = useContext(LanguageContext);
+    if (!context) {
+        throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
 };

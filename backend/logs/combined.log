@@ -1,0 +1,22 @@
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:10.489Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-11-29 02:11:10"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-11-29 02:11:10"}
+{"level":"info","message":"GET / - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:18.940Z"}
+{"level":"info","message":"GET /favicon.ico - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:19.183Z"}
+{"level":"info","message":"GET /api-docs - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:39.867Z"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:39.899Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:39.997Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:40.018Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:40.031Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:40.047Z"}
+{"level":"info","message":"GET /api-docs/favicon-32x32.png - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:11:41.098Z"}
+{"level":"info","message":"GET / - ::1","service":"jelislabible-backend","timestamp":"2025-11-29T02:12:40.828Z"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-11-29T02:25:27.585Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-11-29 02:25:27"}
+{"code":"42710","file":"trigger.c","length":148,"level":"error","line":"773","message":"Error executing migration: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists","name":"error","routine":"CreateTriggerFiringOn","service":"jelislabible-backend","severity":"ERROR","stack":"error: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists\n    at /home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-11-29 02:25:27"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-11-29T02:33:26.242Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-11-29 02:33:26"}
+{"code":"42710","file":"trigger.c","length":148,"level":"error","line":"773","message":"Error executing migration: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists","name":"error","routine":"CreateTriggerFiringOn","service":"jelislabible-backend","severity":"ERROR","stack":"error: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists\n    at /home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-11-29 02:33:26"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-11-29T02:33:59.326Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-11-29 02:33:59"}
+{"code":"42710","file":"trigger.c","length":148,"level":"error","line":"773","message":"Error executing migration: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists","name":"error","routine":"CreateTriggerFiringOn","service":"jelislabible-backend","severity":"ERROR","stack":"error: trigger \"tr_reading_plans_updated_at\" for relation \"reading_plans\" already exists\n    at /home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-11-29 02:33:59"}
