@@ -15,7 +15,7 @@ export const authenticateToken = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     const user = await database.query(
-      'SELECT id, email, name FROM users WHERE id = ?',
+      'SELECT id, email, name FROM users WHERE id = $1',
       [decoded.userId]
     );
 
@@ -39,7 +39,7 @@ export const optionalAuth = async (req, res, next) => {
     try {
       const decoded = jwt.verify(token, JWT_SECRET);
       const user = await database.query(
-        'SELECT id, email, name FROM users WHERE id = ?',
+        'SELECT id, email, name FROM users WHERE id = $1',
         [decoded.userId]
       );
 

@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import dotenv from 'dotenv';
 import winston from 'winston';
 
 import bibleRoutes from './routes/bible.routes.js';
@@ -10,8 +10,6 @@ import chatRoutes from './routes/chat.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import errorHandler from './middleware/errorHandler.js';
 import { specs, swaggerUi } from './docs/swagger.js';
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;

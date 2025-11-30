@@ -6,17 +6,6 @@
 -- ==============================================
 
 -- ==============================================
--- 0. CLEANUP MANUEL (uniquement en DEV)
--- ==============================================
--- ⚠️ À NE JAMAIS ACTIVER EN PRODUCTION
--- DROP TABLE IF EXISTS reading_plans CASCADE;
--- DROP TABLE IF EXISTS strongs_entries CASCADE;
--- DROP TABLE IF EXISTS audio_files CASCADE;
--- DROP TABLE IF EXISTS chat_messages CASCADE;
--- DROP TABLE IF EXISTS users CASCADE;
--- DROP FUNCTION IF EXISTS update_updated_at_column;
-
--- ==============================================
 -- 1. FONCTION GÉNÉRIQUE : updated_at automatique
 -- ==============================================
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -100,11 +89,19 @@ CREATE TABLE IF NOT EXISTS reading_plans (
 -- 3. TRIGGERS
 -- ==============================================
 
--- Trigger mise à jour updated_at
+-- Trigger mise à jour updated_at (version idempotente)
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_trigger WHERE tgname = 'tr_reading_plans_updated_at'
+    ) THEN
 CREATE TRIGGER tr_reading_plans_updated_at
     BEFORE UPDATE ON reading_plans
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
+END IF;
+END
+$$;
 
 -- ==============================================
 -- 4. INDEXES

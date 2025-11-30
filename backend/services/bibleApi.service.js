@@ -9,12 +9,19 @@ const cache = new NodeCache({ stdTTL: parseInt(process.env.CACHE_TTL) || 3600 })
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY;
 const BIBLE_API_URL = process.env.BIBLE_API_URL || 'https://rest.api.bible';
 
+if (!BIBLE_API_KEY) {
+  // Fail fast so misconfiguration is obvious in logs and in startup
+  logger.error('BIBLE_API_KEY is not set. Please configure it in your .env');
+  throw new Error('Missing BIBLE_API_KEY environment variable');
+}
+
 // Configure axios with retries
 const apiClient = axios.create({
   baseURL: BIBLE_API_URL,
   timeout: 10000,
   headers: {
-    'Authorization': `Bearer ${BIBLE_API_KEY}`,
+    // rest.api.bible expects the API key in the 'api-key' header
+    'api-key': BIBLE_API_KEY,
     'Content-Type': 'application/json'
   }
 });
@@ -104,8 +111,8 @@ export const getVerseOfDay = async () => {
     '1CO.13.4', 'MAT.28.20', 'ISA.41.10'
   ];
   
-  const verseIndex = dayOfYear % popularVerses.length;
-  const verseId = popularVerses[verseIndex];
+  const versesIndex = dayOfYear % popularVerses.length;
+  const verseId = popularVerses[versesIndex];
   
   return await getVerse(verseId);
 };
@@ -113,7 +120,7 @@ export const getVerseOfDay = async () => {
 export const getAudio = async (book, chapter) => {
   try {
     const audioFile = await database.query(
-      'SELECT file_url, duration FROM audio_files WHERE book_id = ? AND chapter = ?',
+      'SELECT file_url, duration FROM audio_files WHERE book_id = $1 AND chapter = $2',
       [book, chapter]
     );
 
@@ -141,7 +148,7 @@ export const getAudio = async (book, chapter) => {
 export const getStrongEntry = async (code) => {
   try {
     const entries = await database.query(
-      'SELECT * FROM strongs_entries WHERE code = ?',
+      'SELECT * FROM strongs_entries WHERE code = $1',
       [code]
     );
 
