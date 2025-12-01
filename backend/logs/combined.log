@@ -135,3 +135,140 @@
 {"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-11-30 17:10:25"}
 {"level":"info","message":"GET /api/bible/books/Gen/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-11-30T17:14:35.894Z"}
 {"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/Gen/chapters","service":"jelislabible-backend","timestamp":"2025-11-30 17:14:36"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.47 - ::1","service":"jelislabible-backend","timestamp":"2025-11-30T17:19:32.663Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.47","service":"jelislabible-backend","timestamp":"2025-11-30 17:19:34"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-11-30T17:20:25.911Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/MAT.28.20","service":"jelislabible-backend","timestamp":"2025-11-30 17:20:27"}
+{"level":"info","message":"GET /api/bible/audio/EXO/2 - ::1","service":"jelislabible-backend","timestamp":"2025-11-30T17:21:45.093Z"}
+{"level":"info","message":"GET /api/bible/translations - ::1","service":"jelislabible-backend","timestamp":"2025-11-30T17:22:57.084Z"}
+{"level":"info","message":"API request successful for /v1/bibles","service":"jelislabible-backend","timestamp":"2025-11-30 17:22:58"}
+{"level":"info","message":"GET /api-docs/ - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T02:21:22.193Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-bundle.js - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T02:21:22.238Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui.css - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T02:21:22.241Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T02:21:22.248Z"}
+{"level":"info","message":"GET /api-docs/swagger-ui-init.js - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T02:21:22.262Z"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:56:53.386Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 04:56:55"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:56:55.031Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 04:56:55"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:03.196Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:03"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:03.628Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:03"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:07.296Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:07"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:07.313Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:07"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:42.633Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:42"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:42.647Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:42"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:52.554Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:52"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T04:57:52.566Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 04:57:52"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:03:13.369Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:03:13"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:03:13.385Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:03:13"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:06:42.608Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:06:42"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:06:42.615Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:06:42"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:02.062Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:02"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:02.073Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:02"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:07.291Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:07"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:07.307Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:07"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:13.045Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:13"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:23.139Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:23"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:23.150Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:23"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:25.297Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:25"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:12:25.310Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:12:25"}
+{"level":"info","message":"GET /api/bible/chapters/2JN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:14:38.296Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/2JN.1/verses","service":"jelislabible-backend","timestamp":"2025-12-01 05:14:39"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:20:10.434Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:20:10"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:21:55.824Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:21:55"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:21:55.830Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:21:55"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:21:59.015Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:21:59"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:04.278Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:04"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:15.461Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:15"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:15.472Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:15"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:37.486Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:37"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:37.499Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:37"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:39.060Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:39"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:22:42.444Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses","service":"jelislabible-backend","timestamp":"2025-12-01 05:22:42"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:35:24.494Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:35:24"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:35:24.499Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:35:24"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:37:15.829Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:37:15"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:37:15.834Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:37:15"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:37:19.140Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:37:19"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:37:20.793Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses","service":"jelislabible-backend","timestamp":"2025-12-01 05:37:20"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-12-01T05:44:21.413Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-12-01 05:44:21"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-12-01 05:44:21"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:45:46.697Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:45:47"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:45:47.596Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:45:47"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:45:50.182Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:45:51"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:45:52.796Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 05:45:53"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:01.931Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:02"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:02.721Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:02"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:05.844Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:05"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:05.857Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:05"}
+{"level":"info","message":"GET /api/bible/books/EXO/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:08.154Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/EXO/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:08"}
+{"level":"info","message":"GET /api/bible/chapters/EXO.3/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:46:10.558Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/EXO.3/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 05:46:11"}
+{"level":"info","message":"GET /api/bible/search - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:48:12.220Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/search?query=Ma","service":"jelislabible-backend","timestamp":"2025-12-01 05:48:13"}
+{"level":"info","message":"GET /api/bible/search - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:48:18.959Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/search?query=Matt","service":"jelislabible-backend","timestamp":"2025-12-01 05:48:19"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:48:53.129Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:48:53"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:48:53.142Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:48:53"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:52:18.238Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:52:18"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:52:18.249Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:52:18"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:53:30.335Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:53:30"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:53:30.341Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 05:53:30"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:54:45.656Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:54:45"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:54:47.273Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 05:54:47"}

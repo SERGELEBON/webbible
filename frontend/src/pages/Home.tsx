@@ -7,6 +7,20 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
 
+// Convert API HTML to plain readable text (strip tags, remove leading verses number/pilcrow)
+function cleanVerseHtml(html?: string): string {
+  if (!html) return '';
+  // Create a temporary DOM node to decode HTML and strip tags
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  let text = (div.textContent || div.innerText || '').trim();
+  // Remove leading verses number and optional pilcrow (e.g., "10  ")
+  text = text.replace(/^\s*\d+\s*¶?\s*/, '');
+  // Collapse excessive whitespace
+  text = text.replace(/\s+/g, ' ');
+  return text;
+}
+
 export default function Home() {
   const { t } = useLanguage();
   const [verseOfDay, setVerseOfDay] = useState<any>(null);
@@ -16,10 +30,10 @@ export default function Home() {
   useEffect(() => {
     const fetchVerseOfDay = async () => {
       try {
-        const verse = await apiService.getVerseOfDay();
+        const verses = await apiService.getVerseOfDay();
         setVerseOfDay(verse);
       } catch (error) {
-        console.error('Error fetching verse of day:', error);
+        console.error('Error fetching verses of day:', error);
       } finally {
         setIsLoading(false);
       }
@@ -120,7 +134,7 @@ export default function Home() {
                   ) : verseOfDay ? (
                     <>
                       <p className="text-lg text-gray-700 mb-2">
-                        {verseOfDay.data?.content || t('verse.text')}
+                        {cleanVerseHtml(verseOfDay.data?.content) || t('verse.text')}
                       </p>
                       <p className="text-sm text-gray-600 font-semibold">
                         {verseOfDay.data?.reference || t('verse.reference')}

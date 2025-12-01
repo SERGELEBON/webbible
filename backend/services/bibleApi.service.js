@@ -86,11 +86,13 @@ export const getChapters = async (bookId, bibleId = 'de4e12af7f28f599-02') => {
 };
 
 export const getChapter = async (chapterId, bibleId = 'de4e12af7f28f599-02') => {
-  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}`);
+  // Return chapter with plain text content (no verses numbers) for easier frontend rendering
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}?content-type=text&include-verse-numbers=false`);
 };
 
 export const getVerses = async (chapterId, bibleId = 'de4e12af7f28f599-02') => {
-  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}/verses`);
+  // Request plain text content for each verse and hide verses numbers to avoid artifacts like '¶'
+  return await circuitBreaker.fire(`/v1/bibles/${bibleId}/chapters/${chapterId}/verses?content-type=text&include-verse-numbers=false`);
 };
 
 export const getVerse = async (verseId, bibleId = 'de4e12af7f28f599-02') => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ChatWidget from '../components/ChatWidget';
@@ -7,28 +7,47 @@ import ChapterList from '../components/ChapterList';
 import AudioPlayer from '../components/AudioPlayer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { ChevronLeft } from 'lucide-react';
-
-interface BibleBook {
-  id: number;
-  name: string;
-  testament: 'OT' | 'NT';
-  chapters: number;
-}
-
-const mockBooks: BibleBook[] = [
-  { id: 1, name: 'Genèse', testament: 'OT', chapters: 50 },
-  { id: 2, name: 'Exode', testament: 'OT', chapters: 40 },
-  { id: 40, name: 'Matthieu', testament: 'NT', chapters: 28 },
-  { id: 41, name: 'Marc', testament: 'NT', chapters: 16 },
-  { id: 42, name: 'Luc', testament: 'NT', chapters: 24 },
-  { id: 43, name: 'Jean', testament: 'NT', chapters: 21 },
-];
+import type { BibleBook } from '../types/bible';
+import { apiService, ApiError } from '../services/api.service';
 
 export default function Audio() {
+  const [books, setBooks] = useState<BibleBook[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
   const [selectedBook, setSelectedBook] = useState<BibleBook | null>(null);
   const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
   const [view, setView] = useState<'books' | 'chapters' | 'player'>('books');
   const [chatOpen, setChatOpen] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const raw: any = await apiService.getBooks();
+        const arr: any[] = Array.isArray(raw?.data) ? raw.data : (Array.isArray(raw) ? raw : []);
+        // Map minimal shape to BibleBook with string ids
+        const mapped: BibleBook[] = arr.map((b: any, idx: number) => ({
+          id: String(b.id ?? b.bookId ?? idx + 1),
+          name: String(b.name ?? b.abbreviation ?? `Livre ${idx + 1}`),
+          chapters: Array.isArray(b.chapters) ? b.chapters.length : Number(b.chapters ?? 1),
+          // Heuristic: first 39 entries as OT, rest NT, if testament not provided
+          testament: (b.testament === 'OT' || b.testament === 'NT')
+            ? b.testament
+            : (idx < 39 ? 'OT' : 'NT'),
+        }));
+        if (mounted) setBooks(mapped);
+      } catch (e: any) {
+        const msg = e instanceof ApiError ? e.message : (e?.message || 'Erreur de chargement');
+        if (mounted) setError(msg);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
 
   const handleSelectBook = (book: BibleBook) => {
     setSelectedBook(book);
@@ -51,12 +70,12 @@ export default function Audio() {
     }
   };
 
-  const breadcrumbItems = [
+  const breadcrumbItems = useMemo(() => ([
     { label: 'Accueil', path: '/' },
     { label: 'Écouter la Bible', path: '/audio' },
-    ...(selectedBook ? [{ label: selectedBook.name }] : []),
-    ...(selectedChapter ? [{ label: `Chapitre ${selectedChapter}` }] : []),
-  ];
+    ...(selectedBook ? [{ label: selectedBook.name }] as const : []),
+    ...(selectedChapter ? [{ label: `Chapitre ${selectedChapter}` }] as const : []),
+  ]), [selectedBook, selectedChapter]);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -87,11 +106,20 @@ export default function Audio() {
                 <p className="text-gray-600 mb-6">
                   Choisissez un livre pour commencer l'écoute
                 </p>
-                <BookList
-                  books={mockBooks}
-                  onSelectBook={handleSelectBook}
-                  selectedBookId={selectedBook?.id}
-                />
+
+                {loading && (
+                  <div className="text-gray-500">Chargement des livres...</div>
+                )}
+                {error && (
+                  <div className="text-red-600 mb-4">{error}</div>
+                )}
+                {!loading && !error && (
+                  <BookList
+                    books={books}
+                    onSelectBook={handleSelectBook}
+                    selectedBookId={selectedBook?.id}
+                  />
+                )}
               </div>
             )}
 
