@@ -10,7 +10,7 @@ interface SearchResult {
   id: string;
   book: string;
   chapter: number;
-  verse: number;
+  verses: number;
   text: string;
 }
 
@@ -27,8 +27,8 @@ export default function Search() {
     setLoading(true);
 
     try {
-      const response = await apiService.searchVerses(searchQuery);
-      setResults(response.data?.verses || []);
+      const results = await apiService.searchVerses(searchQuery);
+      setResults(results);
     } catch (error) {
       console.error('Error searching verses:', error);
       setResults([]);
@@ -79,7 +79,7 @@ export default function Search() {
                         <div className="flex items-center space-x-2 mb-2">
                           <BookOpen className="w-4 h-4 text-blue-600" />
                           <span className="font-semibold text-blue-600">
-                            {result.book} {result.chapter}:{result.verse}
+                            {result.book} {result.chapter}:{result.verses}
                           </span>
                         </div>
                         <p className="text-gray-800 leading-relaxed">{result.text}</p>

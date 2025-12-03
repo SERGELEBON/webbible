@@ -13,12 +13,11 @@ export const useBible = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchBooks = async () => {
+  const fetchBooks = async (bibleId?: string) => {
     setLoading(true);
     setError(null);
     try {
-      const raw: any = await apiService.getBooks();
-      const arr: any[] = Array.isArray(raw?.data) ? raw.data : (Array.isArray(raw) ? raw : []);
+      const arr: any[] = await apiService.getBooks(bibleId);
       const mapped: BibleBook[] = arr.map((b: any, idx: number) => ({
         id: String(b.id ?? b.bookId ?? idx + 1),
         name: String(b.name ?? b.abbreviation ?? `Livre ${idx + 1}`),
@@ -34,12 +33,12 @@ export const useBible = () => {
     }
   };
 
-  const fetchChapter = async (chapterId: string) => {
+  const fetchChapter = async (chapterId: string, bibleId?: string) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await apiService.getChapter(chapterId);
-      return response.data;
+      const chapter = await apiService.getChapter(chapterId, bibleId);
+      return chapter;
     } catch (err) {
       setError('Erreur lors du chargement du chapitre');
       console.error('Error fetching chapter:', err);
@@ -49,12 +48,12 @@ export const useBible = () => {
     }
   };
 
-  const searchVerses = async (query: string) => {
+  const searchVerses = async (query: string, bibleId?: string) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await apiService.searchVerses(query);
-      return response.data || [];
+      const list = await apiService.searchVerses(query, bibleId);
+      return list || [];
     } catch (err) {
       setError('Erreur lors de la recherche');
       console.error('Error searching verses:', err);
@@ -65,7 +64,7 @@ export const useBible = () => {
   };
 
   useEffect(() => {
-    fetchBooks();
+    // no-op
   }, []);
 
   return {

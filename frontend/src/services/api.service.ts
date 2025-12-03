@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const RAW_API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// Normalize base URL and ensure it includes /api suffix once
+const _base = RAW_API_URL.replace(/\/$/, '');
+const API_BASE_URL = _base.endsWith('/api') ? _base : `${_base}/api`;
 
 export class ApiError extends Error {
   status: number;
@@ -33,9 +36,7 @@ class ApiService {
         let body: unknown = undefined;
         try {
           body = await response.json();
-        } catch {
-          // ignore json parse error
-        }
+        } catch {}
         const message =
           (typeof body === 'object' && body && 'message' in (body as any)
             ? String((body as any).message)
@@ -58,55 +59,61 @@ class ApiService {
     }
   }
 
-  // Bible API methods
+  // Helper to append optional bibleId query parameter
+  private withBibleId(path: string, bibleId?: string) {
+    if (!bibleId) return path;
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}bibleId=${encodeURIComponent(bibleId)}`;
+  }
+
+  // Bible API methods: always normalize to a stable shape
   async getTranslations() {
-    return this.request('/bible/translations');
+    const resp: any = await this.request('/bible/translations');
+    return Array.isArray(resp?.data) ? resp.data : Array.isArray(resp) ? resp : [];
   }
 
-  async getBooks() {
-    return this.request('/bible/books');
+  async getBooks(bibleId?: string) {
+    const resp: any = await this.request(this.withBibleId('/bible/books', bibleId));
+    return Array.isArray(resp?.data) ? resp.data : Array.isArray(resp) ? resp : (resp?.books ?? []);
   }
 
-  async getChapters(bookId: string) {
-    const resp = await this.request<any>(`/bible/books/${bookId}/chapters`);
-    // Normalize to array
+  async getChapters(bookId: string, bibleId?: string) {
+    const resp: any = await this.request(this.withBibleId(`/bible/books/${bookId}/chapters`, bibleId));
     return Array.isArray(resp?.data) ? resp.data : Array.isArray(resp) ? resp : (resp?.chapters ?? []);
   }
 
-  async getChapter(chapterId: string) {
-    const resp = await this.request<any>(`/bible/chapters/${chapterId}`);
-    // Normalize to object with verses if present
-    if (resp?.data) return resp.data;
-    return resp;
+  async getChapter(chapterId: string, bibleId?: string) {
+    const resp: any = await this.request(this.withBibleId(`/bible/chapters/${chapterId}`, bibleId));
+    return resp?.data ?? resp;
   }
 
-  async getVerses(chapterId: string) {
-    const resp = await this.request<any>(`/bible/chapters/${chapterId}/verses`);
-    // Normalize to array of verses regardless of backend shape
+  async getVerses(chapterId: string, bibleId?: string) {
+    const resp: any = await this.request(this.withBibleId(`/bible/chapters/${chapterId}/verses`, bibleId));
     if (Array.isArray(resp?.data)) return resp.data;
     if (Array.isArray(resp?.verses)) return resp.verses;
     if (Array.isArray(resp)) return resp;
     return [];
   }
 
-  async getVerse(verseId: string) {
-    return this.request(`/bible/verses/${verseId}`);
+  async getVerse(verseId: string, bibleId?: string) {
+    const resp: any = await this.request(this.withBibleId(`/bible/verses/${verseId}`, bibleId));
+    return resp?.data ?? resp;
   }
 
-  async searchVerses(query: string) {
-    return this.request(`/bible/search?q=${encodeURIComponent(query)}`);
+  async searchVerses(query: string, bibleId?: string) {
+    const path = this.withBibleId(`/bible/search?q=${encodeURIComponent(query)}`, bibleId);
+    const resp: any = await this.request(path);
+    return Array.isArray(resp?.data) ? resp.data : Array.isArray(resp) ? resp : (resp?.results ?? []);
   }
 
   async getVerseOfDay() {
-    return this.request('/bible/verse-of-day');
+    const resp: any = await this.request('/bible/verse-of-day');
+    return resp?.data ?? resp;
   }
 
   async getAudio(book: string, chapter: number) {
-    return this.request(`/bible/audio/${book}/${chapter}`);
-  }
-
-  async getStrongEntry(code: string) {
-    return this.request(`/bible/strong/${code}`);
+    const resp: any = await this.request(`/bible/audio/${book}/${chapter}`);
+    return resp?.data ?? resp;
   }
 
   // Chat API methods

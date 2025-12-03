@@ -272,3 +272,320 @@
 {"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 05:54:45"}
 {"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T05:54:47.273Z"}
 {"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 05:54:47"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:03:12.201Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:03:12"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:03:12.214Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:03:12"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:03:14.340Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 06:03:14"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:03:15.507Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 06:03:15"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:07:56.189Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:07:56"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:07:56.204Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:07:56"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:07:57.688Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:07:57"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:07:57.694Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:07:57"}
+{"level":"info","message":"GET /api/bible/books/MRK/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:01.066Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/MRK/chapters","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:02"}
+{"level":"info","message":"GET /api/bible/chapters/MRK.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:02.755Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/MRK.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:03"}
+{"level":"info","message":"GET /api/bible/search - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:19.476Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/search?query=Luc","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:19"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:32.487Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:32"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:32.499Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ISA.41.10","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:32"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:43.428Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:43"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-01T06:08:43.439Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-01 06:08:43"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"jelislabible-backend","timestamp":"2025-12-01T06:10:01.053Z"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"PostgreSQL connection error: connect ECONNREFUSED 127.0.0.1:5438","port":5438,"service":"jelislabible-backend","stack":"Error: connect ECONNREFUSED 127.0.0.1:5438\n    at /home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","syscall":"connect","timestamp":"2025-12-02 18:25:48"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-12-02T18:57:26.567Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:26"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:26"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:57:41.600Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:48"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:57:48.320Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:48"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:57:53.658Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:54"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:57:54.533Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:57:54"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:04.438Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:05"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:08.436Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:08"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.51/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:19.969Z"}
+{"level":"error","message":"Bible API error for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.51/verses?content-type=text&include-verse-numbers=false:","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:21"}
+{"level":"warn","message":"Bible API circuit breaker opened","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:21"}
+{"level":"error","message":"Error fetching verses: Bible API error: 404 Request failed with status code 404","service":"jelislabible-backend","stack":"Error: Bible API error: 404 Request failed with status code 404\n    at AsyncFunction.makeApiRequest (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:65:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:21"}
+{"ip":"::1","level":"error","message":"Error occurred: Bible API error: 404 Request failed with status code 404","method":"GET","service":"jelislabible-backend","stack":"Error: Bible API error: 404 Request failed with status code 404\n    at AsyncFunction.makeApiRequest (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:65:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:21","url":"/api/bible/chapters/GEN.51/verses"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.50/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:30.947Z"}
+{"code":"EOPENBREAKER","level":"error","message":"Error fetching verses: Breaker is open","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:30"}
+{"ip":"::1","level":"error","message":"Error occurred: Breaker is open","method":"GET","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:30","url":"/api/bible/chapters/GEN.50/verses"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.3/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:35.717Z"}
+{"code":"EOPENBREAKER","level":"error","message":"Error fetching verses: Breaker is open","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:35"}
+{"ip":"::1","level":"error","message":"Error occurred: Breaker is open","method":"GET","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:35","url":"/api/bible/chapters/GEN.3/verses"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:39.094Z"}
+{"code":"EOPENBREAKER","level":"error","message":"Error fetching verses: Breaker is open","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:39"}
+{"ip":"::1","level":"error","message":"Error occurred: Breaker is open","method":"GET","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at Module.getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:95:31)\n    at getVerses (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:65:39)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 18:58:39","url":"/api/bible/chapters/GEN.1/verses"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:51.308Z"}
+{"code":"EOPENBREAKER","level":"error","message":"Error fetching verse of day: Breaker is open","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at getVerse (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:99:31)\n    at Module.getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:119:16)\n    at getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:107:38)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2025-12-02 18:58:51"}
+{"ip":"::1","level":"error","message":"Error occurred: Breaker is open","method":"GET","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at getVerse (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:99:31)\n    at Module.getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:119:16)\n    at getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:107:38)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2025-12-02 18:58:51","url":"/api/bible/verse-of-day"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:51.329Z"}
+{"code":"EOPENBREAKER","level":"error","message":"Error fetching verse of day: Breaker is open","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at getVerse (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:99:31)\n    at Module.getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:119:16)\n    at getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:107:38)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2025-12-02 18:58:51"}
+{"ip":"::1","level":"error","message":"Error occurred: Breaker is open","method":"GET","service":"jelislabible-backend","stack":"Error: Breaker is open\n    at buildError (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:1015:17)\n    at CircuitBreaker.call (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:717:21)\n    at CircuitBreaker.fire (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/opossum/lib/circuit.js:616:17)\n    at getVerse (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:99:31)\n    at Module.getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:119:16)\n    at getVerseOfDay (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/controllers/bible.controller.js:107:38)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/serge/Téléchargements/jelismabiblev1.1/backend/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2025-12-02 18:58:51","url":"/api/bible/verse-of-day"}
+{"level":"info","message":"Bible API circuit breaker half-open","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:51"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:55.068Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:55"}
+{"level":"info","message":"Bible API circuit breaker closed","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:55"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:58:55.082Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:58:55"}
+{"level":"info","message":"GET /api/bible/books/2SA/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:08.652Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/2SA/chapters","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:09"}
+{"level":"info","message":"GET /api/bible/chapters/2SA.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:10.356Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/2SA.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:10"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:30.945Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:30"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:30.955Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:30"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:32.560Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:32"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:32.578Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:32"}
+{"level":"info","message":"GET /api/bible/books/JOB/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:48.963Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/JOB/chapters","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:49"}
+{"level":"info","message":"GET /api/bible/chapters/JOB.36/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T18:59:55.263Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/JOB.36/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-02 18:59:56"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:00:12.998Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 19:00:12"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:00:13.010Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 19:00:13"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:02:49.703Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-02 19:02:49"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:03:36.201Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-02 19:03:36"}
+{"level":"info","message":"GET /api/bible/chapters/Genesis%206/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:04:10.626Z"}
+{"level":"error","message":"Bible API error for /v1/bibles/de4e12af7f28f599-02/chapters/Genesis 6/verses?content-type=text&include-verse-numbers=false:","service":"jelislabible-backend","timestamp":"2025-12-02 19:04:11"}
+{"level":"warn","message":"Bible API circuit breaker opened","service":"jelislabible-backend","timestamp":"2025-12-02 19:04:11"}
+{"level":"error","message":"Error fetching verses: Bible API error: 400 Request failed with status code 400","service":"jelislabible-backend","stack":"Error: Bible API error: 400 Request failed with status code 400\n    at AsyncFunction.makeApiRequest (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:65:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 19:04:11"}
+{"ip":"::1","level":"error","message":"Error occurred: Bible API error: 400 Request failed with status code 400","method":"GET","service":"jelislabible-backend","stack":"Error: Bible API error: 400 Request failed with status code 400\n    at AsyncFunction.makeApiRequest (file:///home/serge/T%C3%A9l%C3%A9chargements/jelismabiblev1.1/backend/services/bibleApi.service.js:65:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-12-02 19:04:11","url":"/api/bible/chapters/Genesis%206/verses"}
+{"level":"info","message":"Bible API circuit breaker half-open","service":"jelislabible-backend","timestamp":"2025-12-02 19:04:41"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:05:37.264Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-02 19:05:37"}
+{"level":"info","message":"Bible API circuit breaker closed","service":"jelislabible-backend","timestamp":"2025-12-02 19:05:37"}
+{"level":"info","message":"GET /api/bible/verses/GEN.1.31 - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:06:32.239Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/GEN.1.31","service":"jelislabible-backend","timestamp":"2025-12-02 19:06:33"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:08:20.859Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 19:08:20"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-02T19:08:20.882Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/JHN.3.16","service":"jelislabible-backend","timestamp":"2025-12-02 19:08:20"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"jelislabible-backend","timestamp":"2025-12-02T22:29:34.454Z"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-12-03T03:10:08.488Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-12-03 03:10:08"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-12-03 03:10:08"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:13:50.673Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:13:52"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:13:52.113Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:13:52"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:13:56.518Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:13:56"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:13:56.525Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:13:56"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:11.129Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:11"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:11.138Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:11"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:27.835Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:28"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:28.622Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:28"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:30.258Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:30"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.2/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:14:31.479Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.2/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:14:32"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:18.619Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:18"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:18.625Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:18"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:21.245Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:21"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:22.782Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:24"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:30.617Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:30"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:30.632Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:30"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:46.324Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:46"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:46.343Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:46"}
+{"level":"info","message":"GET /api/bible/books/NUM/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:48.164Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/NUM/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:49"}
+{"level":"info","message":"GET /api/bible/chapters/NUM.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:35:52.254Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/NUM.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:35:52"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:18.591Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:18"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:18.596Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:18"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:24.281Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:24"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:25.697Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:25"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:31.934Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:31"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:31.946Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:31"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:34.094Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:34"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:34.113Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:34"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:37.447Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:37"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:41.125Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:41"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:41.135Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:41"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:44.751Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:44"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:44.770Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:36:44"}
+{"level":"info","message":"GET /api/bible/books/MAT/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:36:59.633Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/MAT/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:37:00"}
+{"level":"info","message":"GET /api/bible/chapters/MAT.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:37:02.167Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/MAT.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:37:02"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:38:30.415Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:38:30"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:38:30.428Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 03:38:30"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:38:31.703Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:38:31"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:38:31.714Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:38:31"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:39:12.665Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:39:12"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:49:01.670Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:49:01"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:49:01.676Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:49:01"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:12.200Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:12"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:12.205Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:12"}
+{"level":"info","message":"GET /api/bible/books/PRO/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:37.697Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/PRO/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:38"}
+{"level":"info","message":"GET /api/bible/chapters/PRO.11/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:41.619Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/PRO.11/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:42"}
+{"level":"info","message":"GET /api/bible/books/MAL/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:53.251Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/MAL/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:53"}
+{"level":"info","message":"GET /api/bible/chapters/MAL.2/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T03:50:55.277Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/MAL.2/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 03:50:55"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:32.066Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:32"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:42.703Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:42"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:42.710Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:42"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:44.320Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:44"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:46.071Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:46"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:49.496Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:49"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:49.501Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:49"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:52.167Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:52"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:52.176Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:52"}
+{"level":"info","message":"GET /api/bible/books/EXO/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:54.465Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/EXO/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:55"}
+{"level":"info","message":"GET /api/bible/chapters/EXO.2/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:11:56.852Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/EXO.2/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 04:11:57"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:02.613Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:02"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:02.625Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:02"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:04.137Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:04"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:04.152Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:04"}
+{"level":"info","message":"GET /api/bible/books/EXO/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:30.527Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books/EXO/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:30"}
+{"level":"info","message":"GET /api/bible/chapters/EXO.3/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:12:31.908Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/EXO.3/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 04:12:32"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:26:00.099Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 04:26:01"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:26:07.199Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 04:26:07"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.12/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T04:26:10.364Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.12/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 04:26:11"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"jelislabible-backend","timestamp":"2025-12-03T04:26:40.138Z"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-12-03T13:30:15.747Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:15"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:15"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:30:22.043Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:22"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:30:22.958Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:22"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:30:24.721Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:25"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:30:26.882Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 13:30:27"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:39:44.564Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 13:39:45"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:39:45.643Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 13:39:45"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:39:51.720Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 13:39:51"}
+{"level":"info","message":"GET /api/bible/verse-of-day - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:39:51.731Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/verses/ROM.8.28","service":"jelislabible-backend","timestamp":"2025-12-03 13:39:51"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:40:09.965Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 13:40:09"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T13:40:09.982Z"}
+{"level":"info","message":"Cache hit for /v1/bibles/de4e12af7f28f599-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 13:40:09"}
+{"level":"info","message":"Server running on port 3001","service":"jelislabible-backend","timestamp":"2025-12-03T14:17:11.414Z"}
+{"level":"info","message":"Connected to PostgreSQL database","service":"jelislabible-backend","timestamp":"2025-12-03 14:17:11"}
+{"level":"info","message":"PostgreSQL migrations executed successfully","service":"jelislabible-backend","timestamp":"2025-12-03 14:17:11"}
+{"level":"info","message":"GET /api/bible/translations - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:24:23.652Z"}
+{"level":"info","message":"API request successful for /v1/bibles","service":"jelislabible-backend","timestamp":"2025-12-03 14:24:26"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:25:10.393Z"}
+{"level":"info","message":"API request successful for /v1/bibles/1b878de073afef07-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:25:10"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:25:16.321Z"}
+{"level":"info","message":"API request successful for /v1/bibles/1b878de073afef07-02/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:25:17"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:25:29.992Z"}
+{"level":"info","message":"API request successful for /v1/bibles/2eb94132ad61ae75-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:25:30"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:25:37.316Z"}
+{"level":"info","message":"API request successful for /v1/bibles/2eb94132ad61ae75-01/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 14:25:38"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:25:39.703Z"}
+{"level":"info","message":"API request successful for /v1/bibles/2eb94132ad61ae75-01/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 14:25:40"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:26:09.768Z"}
+{"level":"info","message":"API request successful for /v1/bibles/9d34f37a5e8e0bf5-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:26:10"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:26:33.758Z"}
+{"level":"info","message":"API request successful for /v1/bibles/aa146959e1d39b78-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:26:34"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:26:38.162Z"}
+{"level":"info","message":"API request successful for /v1/bibles/018ff00d7f55cbc1-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:26:38"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:26:49.347Z"}
+{"level":"info","message":"API request successful for /v1/bibles/98d1c5bee401f80c-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:26:49"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:27:37.764Z"}
+{"level":"info","message":"API request successful for /v1/bibles/9879dbb7cfe39e4d-04/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:27:38"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:28:45.550Z"}
+{"level":"info","message":"API request successful for /v1/bibles/40072c4a5aba4022-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:28:46"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:28:49.225Z"}
+{"level":"info","message":"API request successful for /v1/bibles/40072c4a5aba4022-01/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 14:28:49"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.1/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:28:51.398Z"}
+{"level":"info","message":"API request successful for /v1/bibles/40072c4a5aba4022-01/chapters/GEN.1/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 14:28:52"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:28:56.035Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:28:56"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:29:00.491Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-01/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 14:29:01"}
+{"level":"info","message":"GET /api/bible/chapters/GEN.2/verses - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:29:04.288Z"}
+{"level":"info","message":"API request successful for /v1/bibles/de4e12af7f28f599-01/chapters/GEN.2/verses?content-type=text&include-verse-numbers=false","service":"jelislabible-backend","timestamp":"2025-12-03 14:29:05"}
+{"level":"info","message":"GET /api/bible/books - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:29:19.285Z"}
+{"level":"info","message":"API request successful for /v1/bibles/01b29f4b342acc35-01/books","service":"jelislabible-backend","timestamp":"2025-12-03 14:29:20"}
+{"level":"info","message":"GET /api/bible/books/GEN/chapters - ::1","service":"jelislabible-backend","timestamp":"2025-12-03T14:29:25.565Z"}
+{"level":"info","message":"API request successful for /v1/bibles/01b29f4b342acc35-01/books/GEN/chapters","service":"jelislabible-backend","timestamp":"2025-12-03 14:29:25"}

@@ -14,7 +14,8 @@ export const getTranslations = async (req, res, next) => {
 
 export const getBooks = async (req, res, next) => {
   try {
-    const books = await bibleService.getBooks();
+    const bibleId = req.query.bibleId; // optional
+    const books = await bibleService.getBooks(bibleId);
     res.json(books);
   } catch (error) {
     logger.error('Error fetching books:', error);
@@ -30,7 +31,8 @@ export const getChapters = async (req, res, next) => {
     }
 
     const { bookId } = req.params;
-    const chapters = await bibleService.getChapters(bookId);
+    const bibleId = req.query.bibleId; // optional
+    const chapters = await bibleService.getChapters(bookId, bibleId);
     res.json(chapters);
   } catch (error) {
     logger.error('Error fetching chapters:', error);
@@ -46,7 +48,8 @@ export const getChapter = async (req, res, next) => {
     }
 
     const { chapterId } = req.params;
-    const chapter = await bibleService.getChapter(chapterId);
+    const bibleId = req.query.bibleId; // optional
+    const chapter = await bibleService.getChapter(chapterId, bibleId);
     res.json(chapter);
   } catch (error) {
     logger.error('Error fetching chapter:', error);
@@ -62,7 +65,8 @@ export const getVerses = async (req, res, next) => {
     }
 
     const { chapterId } = req.params;
-    const verses = await bibleService.getVerses(chapterId);
+    const bibleId = req.query.bibleId; // optional
+    const verses = await bibleService.getVerses(chapterId, bibleId);
     res.json(verses);
   } catch (error) {
     logger.error('Error fetching verses:', error);
@@ -78,10 +82,11 @@ export const getVerse = async (req, res, next) => {
     }
 
     const { verseId } = req.params;
-    const verse = await bibleService.getVerse(verseId);
+    const bibleId = req.query.bibleId; // optional
+    const verses = await bibleService.getVerse(verseId, bibleId);
     res.json(verse);
   } catch (error) {
-    logger.error('Error fetching verse:', error);
+    logger.error('Error fetching verses:', error);
     next(error);
   }
 };
@@ -94,7 +99,8 @@ export const searchVerses = async (req, res, next) => {
     }
 
     const { q } = req.query;
-    const results = await bibleService.searchVerses(q);
+    const bibleId = req.query.bibleId; // optional
+    const results = await bibleService.searchVerses(q, bibleId);
     res.json(results);
   } catch (error) {
     logger.error('Error searching verses:', error);
@@ -104,10 +110,10 @@ export const searchVerses = async (req, res, next) => {
 
 export const getVerseOfDay = async (req, res, next) => {
   try {
-    const verse = await bibleService.getVerseOfDay();
+    const verses = await bibleService.getVerseOfDay();
     res.json(verse);
   } catch (error) {
-    logger.error('Error fetching verse of day:', error);
+    logger.error('Error fetching verses of day:', error);
     next(error);
   }
 };
