@@ -373,6 +373,7 @@ export default function Reader() {
                                     </div>
                                 ) : (
                                     <div className="space-y-2">
+                                        // Dans Reader.tsx
                                         {verses.map((verse) => (
                                             <Verse
                                                 key={verse.id}
