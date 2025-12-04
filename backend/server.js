@@ -40,12 +40,22 @@ app.use(helmet());
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  credentials: true,
-  optionsSuccessStatus: 200
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    credentials: true,
+    allowedHeaders: [
+        'Content-Type',
+        'Authorization',
+        'Cache-Control',
+        'X-Requested-With'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

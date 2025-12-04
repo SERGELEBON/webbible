@@ -26,18 +26,40 @@ export default function Home() {
   const [verseOfDay, setVerseOfDay] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [chatOpen, setChatOpen] = useState(false);
+    // Dans Home.tsx, ajoutez setError à la déclaration d'état
+    const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchVerseOfDay = async () => {
-      try {
-        const verses = await apiService.getVerseOfDay();
-        setVerseOfDay(verse);
-      } catch (error) {
-        console.error('Error fetching verses of day:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+      // Dans Home.tsx
+      const fetchVerseOfDay = async () => {
+          try {
+              setIsLoading(true);
+              const data = await apiService.getVerseOfDay();
+
+              // Vérifions ce que nous recevons de l'API
+              console.log('Réponse de getVerseOfDay:', data);
+
+              if (!data) {
+                  throw new Error('Aucune donnée reçue pour le verset du jour');
+              }
+
+              setVerseOfDay(data);
+              setError(null);
+          } catch (error) {
+              console.error('Erreur lors de la récupération du verset du jour:', error);
+              setError('Impossible de charger le verset du jour');
+              // Optionnel: définir un verset par défaut
+              setVerseOfDay({
+                  verse: 1,
+                  text: 'Au commencement, Dieu créa les cieux et la terre.',
+                  book_name: 'Genèse',
+                  chapter: 1,
+                  reference: 'Genèse 1:1'
+              });
+          } finally {
+              setIsLoading(false);
+          }
+      };
 
     fetchVerseOfDay();
   }, []);
@@ -133,12 +155,12 @@ export default function Home() {
                     </div>
                   ) : verseOfDay ? (
                     <>
-                      <p className="text-lg text-gray-700 mb-2">
-                        {cleanVerseHtml(verseOfDay.data?.content) || t('verse.text')}
-                      </p>
-                      <p className="text-sm text-gray-600 font-semibold">
-                        {verseOfDay.data?.reference || t('verse.reference')}
-                      </p>
+                        <p className="text-lg text-gray-700 mb-2">
+                            {verseOfDay.text || cleanVerseHtml(verseOfDay.content) || t('verse.text')}
+                        </p>
+                        <p className="text-sm text-gray-600 font-semibold">
+                            {verseOfDay.reference || `${verseOfDay.book_name} ${verseOfDay.chapter}:${verseOfDay.verse}` || t('verse.reference')}
+                        </p>
                     </>
                   ) : (
                     <>

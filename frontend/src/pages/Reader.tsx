@@ -12,7 +12,7 @@ import BookList from "../components/BookList.tsx";
 import Verse from "../components/Verse.tsx";
 import TranslationPicker, { type Translation } from "../components/TranslationPicker.tsx";
 
-// Define the shape of a verse item based on API responses
+// Verset: accepte plusieurs formes issues d'API
 type VerseItem = {
     id?: string | number;
     text?: string;
@@ -22,17 +22,15 @@ type VerseItem = {
 
 type ChapterMeta = { id: string; number: number };
 
-// Extract readable verses text from various API shapes (HTML or plain)
+// Extraction texte lisible d'un verset (HTML -> texte)
 function extractVerseText(v: VerseItem): string {
     const raw = v?.text ?? v?.content ?? v?.attributes?.text ?? v?.attributes?.content ?? '';
     if (!raw) return '';
     const str = String(raw);
-    // Strip HTML if present
     if (/<[^>]+>/.test(str)) {
         const div = document.createElement('div');
         div.innerHTML = str;
         let txt = (div.textContent || div.innerText || '').trim();
-        // Remove leading verse number and pilcrow if any (e.g., "10  ")
         txt = txt.replace(/^\s*\d+\s*¶?\s*/, '');
         return txt.replace(/\s+/g, ' ');
     }
@@ -47,17 +45,17 @@ export default function Reader() {
     const [verses, setVerses] = useState<VerseItem[]>([]);
     const [darkMode, setDarkMode] = useState(false);
     const [view, setView] = useState<'books' | 'chapters' | 'verses'>('books');
-    const [loading, setLoading] = useState(false); // for chapters and verses fetching
+    const [loading, setLoading] = useState(false); // pour chapitres/versets
     const [chatOpen, setChatOpen] = useState(false);
     const [chaptersMeta, setChaptersMeta] = useState<ChapterMeta[]>([]);
     const [chaptersError, setChaptersError] = useState<string | null>(null);
 
-    // translations state
+    // Versions
     const [translations, setTranslations] = useState<Translation[]>([]);
     const [selectedTranslation, setSelectedTranslation] = useState<Translation | null>(null);
     const [loadingTranslations, setLoadingTranslations] = useState(false);
 
-    // Breadcrumb items
+    // Fil d'ariane
     const breadcrumbItems = [
         { label: 'Accueil', path: '/' },
         { label: 'Lire la Bible', path: '/reader' },
@@ -65,14 +63,20 @@ export default function Reader() {
         ...(selectedChapter ? [{ label: `Chapitre ${selectedChapter}` }] as const : []),
     ];
 
-    // Load available translations on mount
+    // Charger la liste des versions au montage
     useEffect(() => {
         let mounted = true;
         (async () => {
             setLoadingTranslations(true);
             try {
                 const resp = await apiService.getTranslations();
-                const arr: any[] = Array.isArray(resp?.data) ? resp.data : (Array.isArray(resp) ? resp : []);
+                const arr: any[] = Array.isArray((resp as any)?.data)
+                    ? (resp as any).data
+                    : Array.isArray(resp as any)
+                        ? (resp as any)
+                        : Array.isArray((resp as any)?.translations)
+                            ? (resp as any).translations
+                            : [];
                 const mapped: Translation[] = arr
                     .map((t: any) => ({
                         id: String(t.id ?? t.bibleId ?? ''),
@@ -92,21 +96,62 @@ export default function Reader() {
         return () => { mounted = false; };
     }, []);
 
-    // Build chapters list with filtering and numeric sort
+    // Si la traduction change, recharge les livres (useBible.fetchBooks)
+    useEffect(() => {
+        if (selectedTranslation) {
+            fetchBooks(selectedTranslation.id);
+            setSelectedBook(null);
+            setSelectedChapter(null);
+            setChaptersMeta([]);
+            setVerses([]);
+            setView('books');
+        }
+    }, [selectedTranslation, fetchBooks]);
+
+    // Sélection d'un livre -> construire liste chapitres FIABLE
     const handleSelectBook = async (book: BibleBook) => {
+        console.log('📖 Livre sélectionné:', {
+            bookId: book.id,
+            bookName: book.name,
+            chaptersCount: book.chapters
+        });
+        // detect multiple id fields
+        const bookId = String((book as any).id ?? (book as any).bookId ?? (book as any).osisId ?? (book as any).code ?? '');
         setSelectedBook(book);
         setView('chapters');
         setSelectedChapter(null);
         setVerses([]);
         setChaptersError(null);
+        setChaptersMeta([]);
         setLoading(true);
         try {
-            const data = await apiService.getChapters(book.id, selectedTranslation?.id);
-            const raw: any[] = (Array.isArray(data) ? data : (data as any)?.data ?? []) as any[];
+            const resp = await apiService.getChapters(bookId, selectedTranslation?.id);
 
-            // Keep only real chapters: those with a numeric number or an id ending with .<number>
-            const filtered = raw.filter((c: any) => {
-                const hasNumericNumber = c?.number != null && /^\d+$/.test(String(c.number));
+            // Normalize many possible shapes to an array
+            const raw: any[] = Array.isArray((resp as any)?.data)
+                ? (resp as any).data
+                : Array.isArray((resp as any)?.chapters)
+                    ? (resp as any).chapters
+                    : Array.isArray((resp as any)?.items)
+                        ? (resp as any).items
+                        : Array.isArray(resp as any)
+                            ? resp as any[]
+                            : Array.isArray((resp as any)?.data?.chapters)
+                                ? (resp as any).data.chapters
+                                : [];
+
+            // If raw empty but book exposes a numeric chapter count, create synthetic list
+            const bookChapterCount = Number((book as any).chapterCount ?? (book as any).chapters ?? (book as any).numChapters ?? 0);
+            let candidates = raw;
+            if (candidates.length === 0 && Number.isFinite(bookChapterCount) && bookChapterCount > 0) {
+                candidates = Array.from({ length: bookChapterCount }).map((_, i) => ({ id: `${bookId}.${i + 1}`, number: i + 1 }));
+            }
+
+            // Filter and build ChapterMeta
+            const filtered = candidates.filter((c: any, idx: number) => {
+                // accept if it has numeric number, or id ends with .<num>, or has chapter/chapterNumber fields
+                const numField = c?.number ?? c?.chapter ?? c?.chapterNumber;
+                const hasNumericNumber = numField != null && /^\d+$/.test(String(numField));
                 const idStr = String(c?.id ?? '');
                 const idHasNumericSuffix = /\.([1-9]\d*)$/.test(idStr);
                 return hasNumericNumber || idHasNumericSuffix;
@@ -115,12 +160,15 @@ export default function Reader() {
             const list: ChapterMeta[] = filtered
                 .map((c: any, idx: number) => {
                     const idStr = String(c?.id ?? '');
-                    let number = c?.number != null && /^\d+$/.test(String(c.number)) ? Number(c.number) : NaN;
-                    if (!Number.isFinite(number)) {
+                    let number = NaN;
+                    if (c?.number != null && /^\d+$/.test(String(c.number))) number = Number(c.number);
+                    else if (c?.chapter != null && /^\d+$/.test(String(c.chapter))) number = Number(c.chapter);
+                    else if (c?.chapterNumber != null && /^\d+$/.test(String(c.chapterNumber))) number = Number(c.chapterNumber);
+                    else {
                         const m = idStr.match(/\.([1-9]\d*)$/);
                         number = m ? Number(m[1]) : idx + 1;
                     }
-                    const id = idStr || `${book.id}.${number}`;
+                    const id = idStr || `${bookId}.${number}`;
                     return { id, number };
                 })
                 .sort((a, b) => a.number - b.number);
@@ -135,18 +183,50 @@ export default function Reader() {
         }
     };
 
+    // Sélection d'un chapitre -> récupérer versets (robuste aux formes)
     const handleSelectChapter = async (chapter: number) => {
         if (!selectedBook) return;
+
+        console.log('📝 Chargement du chapitre:', {
+            bookId: selectedBook.id,
+            bookName: selectedBook.name,
+            chapter
+        });
 
         setSelectedChapter(chapter);
         setView('verses');
         setLoading(true);
+        setVerses([]);
 
         try {
-            const chapterId = chaptersMeta.find((c) => c.number === chapter)?.id || `${selectedBook.id}.${chapter}`;
-            const data = await apiService.getVerses(chapterId, selectedTranslation?.id);
-            console.log('Verses payload shape:', data);
-            setVerses(Array.isArray(data) ? data : (data as any)?.verses ?? []);
+            const chapterMeta = chaptersMeta.find((c) => c.number === chapter);
+            const chapterId = chapterMeta?.id || `${String((selectedBook as any).id ?? (selectedBook as any).bookId ?? (selectedBook as any).osisId)}.${chapter}`;
+
+            console.log('📜 Versets reçus:', {
+                chapterId,
+                nbVerses: verses?.length,
+                firstVerse: verses?.[0],
+                lastVerse: verses?.[verses.length - 1]
+            }); // <-- Ajoutez cette ligne
+
+            const resp = await apiService.getVerses(chapterId, selectedTranslation?.id);
+
+            // Normalisation agressive des versets
+            let list: any[] = [];
+            if (Array.isArray((resp as any)?.data)) list = (resp as any).data as any[];
+            else if (Array.isArray((resp as any)?.verses)) list = (resp as any).verses as any[];
+            else if (Array.isArray(resp as any)) list = resp as any[];
+            else if ((resp as any)?.data && Array.isArray((resp as any).data.verses)) list = (resp as any).data.verses as any[];
+            else if (typeof resp === 'string') {
+                // split text into lines
+                list = resp.split(/\r?\n/).filter(Boolean).map((t, i) => ({ id: `${chapterId}-${i + 1}`, text: t }));
+            } else if (resp && typeof resp === 'object') {
+                // try best-effort: flatten object values that look like verses
+                const possible = Object.values(resp).flatMap((v: any) => Array.isArray(v) ? v : []);
+                if (possible.length > 0) list = possible;
+            }
+
+            setVerses(list);
         } catch (error) {
             console.error('Error fetching verses:', error);
             setVerses([]);
@@ -187,21 +267,20 @@ export default function Reader() {
                         </button>
                     </div>
 
-                    {/* Translation selection */}
+                    {/* Choix de version */}
                     <div className={`rounded-2xl shadow-sm p-6 mb-6 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
                         <TranslationPicker
                             translations={translations}
                             selectedId={selectedTranslation?.id}
                             onSelect={(t) => {
                                 setSelectedTranslation(t);
-                                // reset selections when translation changes
+                                // reset
                                 setSelectedBook(null);
                                 setSelectedChapter(null);
                                 setChaptersMeta([]);
                                 setVerses([]);
-                                // fetch books for this translation via hook
+                                // charger les livres pour cette version
                                 fetchBooks(t.id);
-                                // ensure view shows books
                                 setView('books');
                             }}
                             loading={loadingTranslations}
@@ -264,7 +343,11 @@ export default function Reader() {
                                     <div className="mb-4 text-red-600">{chaptersError}</div>
                                 )}
                                 <ChapterList
-                                    totalChapters={chaptersMeta.length || selectedBook.chapters}
+                                    totalChapters={
+                                        chaptersMeta.length > 0
+                                            ? chaptersMeta.length
+                                            : Number((selectedBook as any)?.chapterCount ?? (selectedBook as any)?.chapters ?? 0)
+                                    }
                                     selectedChapter={selectedChapter || undefined}
                                     onSelectChapter={handleSelectChapter}
                                 />
@@ -290,11 +373,11 @@ export default function Reader() {
                                     </div>
                                 ) : (
                                     <div className="space-y-2">
-                                        {verses.map((verse, index) => (
+                                        {verses.map((verse) => (
                                             <Verse
-                                                key={verse.id ?? `${selectedBook?.id}.${selectedChapter}.${index + 1}`}
-                                                number={index + 1}
-                                                text={extractVerseText(verse) || `Verset ${index + 1}`}
+                                                key={verse.id}
+                                                verseId={verse.id}
+                                                translation={selectedTranslation?.id}
                                             />
                                         ))}
                                     </div>
