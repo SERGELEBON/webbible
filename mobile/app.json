@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "LitaBible",
+    "slug": "litabible-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "litabible",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.litabible.mobile"
+    },
+    "android": {
+      "package": "com.litabible.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#1a4fa0"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon.png",
+      "bundler": "metro"
+    }
+  }
+}
